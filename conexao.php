@@ -12,3 +12,4 @@ try {
     echo "Erro na conexão: " . $e->getMessage();
 }
 ?>
+//corrigindo conexao banco railway
