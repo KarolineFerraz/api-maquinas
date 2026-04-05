@@ -1,6 +1,3 @@
-echo "TESTE NOVO CODIGO";
-exit;
-
 <?php
 include 'conexao.php';
 
