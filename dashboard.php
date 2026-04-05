@@ -19,7 +19,7 @@ JOIN tabela_bruta t ON m.id = t.id_maquina
 GROUP BY m.id, m.nome, m.limite_db_manutencao, m.limite_db_critico
 ";
 
-$stmt = $conn->query($sql);
+$stmt = $pdo->query($sql);
 
 echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
 ?>
