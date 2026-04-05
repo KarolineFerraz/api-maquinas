@@ -20,3 +20,5 @@ JOIN tabela_bruta t ON mo.id = t.id_modelo
 
 GROUP BY mo.id, mo.nome_modelo, m.limite_db_manutencao, m.limite_db_critico
 ";
+
+// atualização final
