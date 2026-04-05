@@ -5,11 +5,16 @@ $db = "railway";
 $user = "root";
 $pass = "HFYhqwrhIOYMmpViozyPlTdNUqODLnaf";
 
+$pdo = null;
+
 try {
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
+    $pdo = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
 } catch (PDOException $e) {
-    echo "Erro na conexão: " . $e->getMessage();
+    die("Erro na conexão: " . $e->getMessage());
 }
 ?>
-//corrigindo conexao banco railway
