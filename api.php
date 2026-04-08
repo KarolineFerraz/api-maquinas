@@ -6,7 +6,7 @@ header('Content-Type: application/json; charset=utf-8');
 $rota = $_GET['rota'] ?? '';
 $metodo = $_SERVER['REQUEST_METHOD'];
 
-// 🔹 GET - DASHBOARD
+//  GET - DASHBOARD
 if ($rota == 'dashboard' && $metodo == 'GET') {
 
     $sql = "
@@ -31,7 +31,7 @@ if ($rota == 'dashboard' && $metodo == 'GET') {
     exit;
 }
 
-// 🔹 POST - INSERIR DADOS
+//  POST - INSERIR DADOS
 if ($rota == 'inserir' && $metodo == 'POST') {
 
     $data = json_decode(file_get_contents("php://input"), true);
@@ -50,5 +50,5 @@ if ($rota == 'inserir' && $metodo == 'POST') {
     exit;
 }
 
-// 🔹 ROTA NÃO ENCONTRADA
+//  ROTA NÃO ENCONTRADA
 echo json_encode(["erro" => "rota inválida"]);
